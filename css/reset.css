@@ -1,6 +1,11 @@
 *, *::before, *::after {
 	box-sizing: inherit;
 }
+:root {
+    --color-grey: #353A42;
+    --color-black: #000;
+    --color-white: #fff;
+}
 html {
 	box-sizing: border-box;
 }
