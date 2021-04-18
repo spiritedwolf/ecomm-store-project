@@ -22,9 +22,9 @@
         <ul class="menu">
           <li><a href="#">Shop</a>
             <ul class="submenu">
-              <li><a href="#">Subcategory</a></li>
-              <li><a href="#">Subcategory</a></li>
-              <li><a href="#">Subcategory</a></li>
+              <li><a href="#">North America</a></li>
+              <li><a href="#">Europe</a></li>
+              <li><a href="#">Asia</a></li>
             </ul>
           </li>
           <li><a href="#">About</a></li>
@@ -58,23 +58,24 @@
 
         <div class="filter-options">
           <fieldset>
-            <legend>Colour</legend>
+            <legend>Categories</legend>
             <ul class="filter-list">
-              <li><input type="checkbox" name="colour" value="black" id="black"> <label for="black">Black</label></li>
-              <li><input type="checkbox" name="colour" value="white" id="white"> <label for="white">White</label></li>
-              <li><input type="checkbox" name="colour" value="grey" id="grey"> <label for="grey">Grey</label></li>
-              <li><input type="checkbox" name="colour" value="red" id="red"> <label for="red">Red</label></li>
-              <li><input type="checkbox" name="colour" value="blue" id="blue"> <label for="blue">Blue</label></li>
+              <li><input type="checkbox" name="categorie" value="Coffee" id="coffee"> <label for="coffee">Coffee</label></li>
+              <li><input type="checkbox" name="categorie" value="Blended Coffee" id="blended-coffee"> <label for="blended-coffee">Blended Coffee</label></li>
+              <li><input type="checkbox" name="categorie" value="Decaf Coffee" id="decaf-coffee"> <label for="decaf-coffee">Decaf Coffee</label></li>
+              <li><input type="checkbox" name="categorie" value="Espresso" id="espresso"> <label for="espresso">Espresso</label></li>
+              <li><input type="checkbox" name="categorie" value="Fairtrade" id="fairtrade"> <label for="fairtrade">Fairtrade</label></li>
+              <li><input type="checkbox" name="categorie" value="Flavoured Coffee" id="flavoured-coffee"> <label for="flavoured-coffee">Flavoured Coffee</label></li>
+              <li><input type="checkbox" name="categorie" value="Origin Coffee" id="origin-coffee"> <label for="origin-coffee">Origin Coffee</label></li>
+              <li><input type="checkbox" name="categorie" value="Speciality Coffee" id="speciality-coffee"> <label for="speciality-coffee">Speciality Coffee</label></li>
             </ul>
           </fieldset>
           <fieldset>
             <legend>Sizes</legend>
             <ol class="filter-list">
-              <li><input type="checkbox" name="size" value="xs" id="xs"> <label for="xs">XS</label></li>
-              <li><input type="checkbox" name="size" value="sm" id="sm"> <label for="sm">S</label></li>
-              <li><input type="checkbox" name="size" value="md" id="md"> <label for="md">M</label></li>
-              <li><input type="checkbox" name="size" value="lg" id="lg"> <label for="lg">L</label></li>
-              <li><input type="checkbox" name="size" value="xl" id="xl"> <label for="xl">XL</label></li>
+              <li><input type="checkbox" name="size" value="sm" id="sm"> <label for="sm">Small Coffee Bag</label></li>
+              <li><input type="checkbox" name="size" value="md" id="md"> <label for="md">Medium Coffee Bag</label></li>
+              <li><input type="checkbox" name="size" value="lg" id="lg"> <label for="lg">Large Coffee Bag</label></li>
             </ol>
           </fieldset>
           <fieldset>
@@ -108,10 +109,10 @@
           </fieldset>
         </div>
         <fieldset>
-          <label for="sort">Show</label>
+          <label for="sort">Sort</label>
           <select name="sort" id="sort">
-            <option value="price-high">Price, highest to lowest</option>
-            <option value="price-low">Price, lowest to highest</option>
+            <option value="price-high">Price - highest to lowest</option>
+            <option value="price-low">Price - lowest to highest</option>
             <option value="newest">Newest releases</option>
           </select>
         </fieldset>
@@ -124,34 +125,26 @@
         <article class="product">
           <header>
             <img src="img/product.jpg" alt="Product Image">
-            <h3>Product Name</h3>
-            <data value="39"><del>$50.00</del> <ins>$39.00</ins></data>
-            <p>Here is a shot of this product that might entice a user to click and add it to their cart.</p>
+            <h3>Brazil</h3>
             <dl>
               <dt>Rating</dt>
               <dd>4.4 <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
             </dl>
+            <data value="35"><del>$40.00</del> <ins>$35.00</ins></data>
+            <p>This is an exemplary Brazil with notes of white chocolate, macadamia nut and nutty spread, supplemented by a low acridity, phenomenal pleasantness and a smooth completion.</p>
             <a href="#">see more</a>
           </header>
-          <form>
-            <fieldset>
-              <legend>Colours</legend>
-              <ul>
-                <li><label><input type="radio" name="colour" value="r"> Red</label></li>
-                <li><label><input type="radio" name="colour" value="w"> White</label></li>
-                <li><label><input type="radio" name="colour" value="b"> Blue</label></li>
-              </ul>
-            </fieldset>
+          <form class="product-property">
             <fieldset>
               <legend>Sizes</legend>
               <ol>
-                <li><label><input type="radio" name="size" value="m"> M</label></li>
-                <li><label><input type="radio" name="size" value="l"> L</label></li>
-                <li><label><input type="radio" name="size" value="xl"> XL</label></li>
+                <li><label><input type="radio" name="size" value="s">Small</label></li>
+                <li><label><input type="radio" name="size" value="m">Medium</label></li>
+                <li><label><input type="radio" name="size" value="l">Large</label></li>
               </ol>
             </fieldset>
           </form>
-          <footer>
+          <footer class="product-footer">
             <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
             <button type="button"><span class="material-icons">favorite</span></button>
           </footer>
@@ -161,34 +154,26 @@
         <article class="product">
           <header>
             <img src="img/product.jpg" alt="Product Image">
-            <h3>Product Name</h3>
-            <data value="39"><del>$50.00</del> <ins>$39.00</ins></data>
-            <p>Here is a shot of this product that might entice a user to click and add it to their cart.</p>
+            <h3>Brazil</h3>
             <dl>
               <dt>Rating</dt>
               <dd>4.4 <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
             </dl>
+            <data value="35"><del>$40.00</del> <ins>$35.00</ins></data>
+            <p>This is an exemplary Brazil with notes of white chocolate, macadamia nut and nutty spread, supplemented by a low acridity, phenomenal pleasantness and a smooth completion.</p>
             <a href="#">see more</a>
           </header>
-          <form>
-            <fieldset>
-              <legend>Colours</legend>
-              <ul>
-                <li><label><input type="radio" name="colour" value="r"> Red</label></li>
-                <li><label><input type="radio" name="colour" value="w"> White</label></li>
-                <li><label><input type="radio" name="colour" value="b"> Blue</label></li>
-              </ul>
-            </fieldset>
+          <form class="product-property">
             <fieldset>
               <legend>Sizes</legend>
               <ol>
-                <li><label><input type="radio" name="size" value="m"> M</label></li>
-                <li><label><input type="radio" name="size" value="l"> L</label></li>
-                <li><label><input type="radio" name="size" value="xl"> XL</label></li>
+                <li><label><input type="radio" name="size" value="s">Small</label></li>
+                <li><label><input type="radio" name="size" value="m">Medium</label></li>
+                <li><label><input type="radio" name="size" value="l">Large</label></li>
               </ol>
             </fieldset>
           </form>
-          <footer>
+          <footer class="product-footer">
             <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
             <button type="button"><span class="material-icons">favorite</span></button>
           </footer>
@@ -198,34 +183,26 @@
         <article class="product">
           <header>
             <img src="img/product.jpg" alt="Product Image">
-            <h3>Product Name</h3>
-            <data value="39"><del>$50.00</del> <ins>$39.00</ins></data>
-            <p>Here is a shot of this product that might entice a user to click and add it to their cart.</p>
+            <h3>Brazil</h3>
             <dl>
               <dt>Rating</dt>
               <dd>4.4 <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
             </dl>
+            <data value="35"><del>$40.00</del> <ins>$35.00</ins></data>
+            <p>This is an exemplary Brazil with notes of white chocolate, macadamia nut and nutty spread, supplemented by a low acridity, phenomenal pleasantness and a smooth completion.</p>
             <a href="#">see more</a>
           </header>
-          <form>
-            <fieldset>
-              <legend>Colours</legend>
-              <ul>
-                <li><label><input type="radio" name="colour" value="r"> Red</label></li>
-                <li><label><input type="radio" name="colour" value="w"> White</label></li>
-                <li><label><input type="radio" name="colour" value="b"> Blue</label></li>
-              </ul>
-            </fieldset>
+          <form class="product-property">
             <fieldset>
               <legend>Sizes</legend>
               <ol>
-                <li><label><input type="radio" name="size" value="m"> M</label></li>
-                <li><label><input type="radio" name="size" value="l"> L</label></li>
-                <li><label><input type="radio" name="size" value="xl"> XL</label></li>
+                <li><label><input type="radio" name="size" value="s">Small</label></li>
+                <li><label><input type="radio" name="size" value="m">Medium</label></li>
+                <li><label><input type="radio" name="size" value="l">Large</label></li>
               </ol>
             </fieldset>
           </form>
-          <footer>
+          <footer class="product-footer">
             <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
             <button type="button"><span class="material-icons">favorite</span></button>
           </footer>
@@ -235,34 +212,26 @@
         <article class="product">
           <header>
             <img src="img/product.jpg" alt="Product Image">
-            <h3>Product Name</h3>
-            <data value="39"><del>$50.00</del> <ins>$39.00</ins></data>
-            <p>Here is a shot of this product that might entice a user to click and add it to their cart.</p>
+            <h3>Brazil</h3>
             <dl>
               <dt>Rating</dt>
               <dd>4.4 <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
             </dl>
+            <data value="35"><del>$40.00</del> <ins>$35.00</ins></data>
+            <p>This is an exemplary Brazil with notes of white chocolate, macadamia nut and nutty spread, supplemented by a low acridity, phenomenal pleasantness and a smooth completion.</p>
             <a href="#">see more</a>
           </header>
-          <form>
-            <fieldset>
-              <legend>Colours</legend>
-              <ul>
-                <li><label><input type="radio" name="colour" value="r"> Red</label></li>
-                <li><label><input type="radio" name="colour" value="w"> White</label></li>
-                <li><label><input type="radio" name="colour" value="b"> Blue</label></li>
-              </ul>
-            </fieldset>
+          <form class="product-property">
             <fieldset>
               <legend>Sizes</legend>
               <ol>
-                <li><label><input type="radio" name="size" value="m"> M</label></li>
-                <li><label><input type="radio" name="size" value="l"> L</label></li>
-                <li><label><input type="radio" name="size" value="xl"> XL</label></li>
+                <li><label><input type="radio" name="size" value="s">Small</label></li>
+                <li><label><input type="radio" name="size" value="m">Medium</label></li>
+                <li><label><input type="radio" name="size" value="l">Large</label></li>
               </ol>
             </fieldset>
           </form>
-          <footer>
+          <footer class="product-footer">
             <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
             <button type="button"><span class="material-icons">favorite</span></button>
           </footer>
@@ -272,34 +241,26 @@
         <article class="product">
           <header>
             <img src="img/product.jpg" alt="Product Image">
-            <h3>Product Name</h3>
-            <data value="39"><del>$50.00</del> <ins>$39.00</ins></data>
-            <p>Here is a shot of this product that might entice a user to click and add it to their cart.</p>
+            <h3>Brazil</h3>
             <dl>
               <dt>Rating</dt>
               <dd>4.4 <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
             </dl>
+            <data value="35"><del>$40.00</del> <ins>$35.00</ins></data>
+            <p>This is an exemplary Brazil with notes of white chocolate, macadamia nut and nutty spread, supplemented by a low acridity, phenomenal pleasantness and a smooth completion.</p>
             <a href="#">see more</a>
           </header>
-          <form>
-            <fieldset>
-              <legend>Colours</legend>
-              <ul>
-                <li><label><input type="radio" name="colour" value="r"> Red</label></li>
-                <li><label><input type="radio" name="colour" value="w"> White</label></li>
-                <li><label><input type="radio" name="colour" value="b"> Blue</label></li>
-              </ul>
-            </fieldset>
+          <form class="product-property">
             <fieldset>
               <legend>Sizes</legend>
               <ol>
-                <li><label><input type="radio" name="size" value="m"> M</label></li>
-                <li><label><input type="radio" name="size" value="l"> L</label></li>
-                <li><label><input type="radio" name="size" value="xl"> XL</label></li>
+                <li><label><input type="radio" name="size" value="s">Small</label></li>
+                <li><label><input type="radio" name="size" value="m">Medium</label></li>
+                <li><label><input type="radio" name="size" value="l">Large</label></li>
               </ol>
             </fieldset>
           </form>
-          <footer>
+          <footer class="product-footer">
             <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
             <button type="button"><span class="material-icons">favorite</span></button>
           </footer>
@@ -309,34 +270,26 @@
         <article class="product">
           <header>
             <img src="img/product.jpg" alt="Product Image">
-            <h3>Product Name</h3>
-            <data value="39"><del>$50.00</del> <ins>$39.00</ins></data>
-            <p>Here is a shot of this product that might entice a user to click and add it to their cart.</p>
+            <h3>Brazil</h3>
             <dl>
               <dt>Rating</dt>
               <dd>4.4 <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
             </dl>
+            <data value="35"><del>$40.00</del> <ins>$35.00</ins></data>
+            <p>This is an exemplary Brazil with notes of white chocolate, macadamia nut and nutty spread, supplemented by a low acridity, phenomenal pleasantness and a smooth completion.</p>
             <a href="#">see more</a>
           </header>
-          <form>
-            <fieldset>
-              <legend>Colours</legend>
-              <ul>
-                <li><label><input type="radio" name="colour" value="r"> Red</label></li>
-                <li><label><input type="radio" name="colour" value="w"> White</label></li>
-                <li><label><input type="radio" name="colour" value="b"> Blue</label></li>
-              </ul>
-            </fieldset>
+          <form class="product-property">
             <fieldset>
               <legend>Sizes</legend>
               <ol>
-                <li><label><input type="radio" name="size" value="m"> M</label></li>
-                <li><label><input type="radio" name="size" value="l"> L</label></li>
-                <li><label><input type="radio" name="size" value="xl"> XL</label></li>
+                <li><label><input type="radio" name="size" value="s">Small</label></li>
+                <li><label><input type="radio" name="size" value="m">Medium</label></li>
+                <li><label><input type="radio" name="size" value="l">Large</label></li>
               </ol>
             </fieldset>
           </form>
-          <footer>
+          <footer class="product-footer">
             <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
             <button type="button"><span class="material-icons">favorite</span></button>
           </footer>
@@ -355,6 +308,7 @@
       </nav>
     </main>
 
+    <!-- To-Do:- Add the social media icons using font awesome css library -->
     <footer class="page-footer">
       <ul class="social">
         <li><a href="#"><span class="material-icons">face</span> Facebook</a></li>
