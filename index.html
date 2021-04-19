@@ -8,16 +8,23 @@
     <meta name="author" content="Spirit">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="page-header">
-      <a href="index.html" class="logo">Hello World<!-- Site logo --></a>
+      <div class="logo">
+      <a href="index.html">
+        <img src="img/logo-black.png" alt="NN coffee logo">
+      </a>
+    </div>
 
       <!-- Navigation menu and toggle button (non-functional) -->
-      <button type="button" class="nav-toggle">
-        <span class="material-icons">menu</span>
-      </button>
+      <div class="hamburger">
+        <button type="button" class="nav-toggle">
+          <i class="fa fa-chevron-circle-down">Menu</i>
+        </button>
+      </div>
       <nav aria-label="Primary" class="navigation">
         <ul class="menu">
           <li><a href="#">Shop</a>
@@ -33,266 +40,352 @@
       </nav>
 
       <!-- Search for a product (non-functional) -->
-      <form class="search">
-        <label>Search
-          <input type="search" name="find" id="find">
-        </label>
-        <button type="button"><span class="material-icons">search</span></button>
-      </form>
-
-      <!-- Additional links -->
-      <ul class="your-products">
-        <li><a href="#"><span class="material-icons" aria-label="Favourites">favorite_border</span></a></li>
-        <li><a href="#"><span class="material-icons" aria-label="Items in your cart">shopping_cart</span></a></li>
-      </ul>
+      <div class="search-nav">
+        <form class="search">
+          <label>Search
+            <input type="search" name="find" id="find">
+          </label>
+          <button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+      </div>
     </header>
 
     <main class="products">
       <header class="heading">
-        <h1>Sale on [Category Name]</h1>
+        <h1>Buy Coffee</h1>
       </header>
 
       <!-- Filtering product form -->
-      <form class="filters">
-        <h2>Filters</h2>
+      <div class="sidebar">
+        <form class="filters">
+          <h2>Filters</h2>
 
-        <div class="filter-options">
+          <div class="filter-options">
+            <fieldset>
+              <legend>Categories</legend>
+              <ul class="filter-list">
+                <li><input type="checkbox" name="categorie" value="Coffee" id="coffee"> <label for="coffee">Coffee</label></li>
+                <li><input type="checkbox" name="categorie" value="Blended Coffee" id="blended-coffee"> <label for="blended-coffee">Blended Coffee</label></li>
+                <li><input type="checkbox" name="categorie" value="Decaf Coffee" id="decaf-coffee"> <label for="decaf-coffee">Decaf Coffee</label></li>
+                <li><input type="checkbox" name="categorie" value="Espresso" id="espresso"> <label for="espresso">Espresso</label></li>
+                <li><input type="checkbox" name="categorie" value="Fairtrade" id="fairtrade"> <label for="fairtrade">Fairtrade</label></li>
+                <li><input type="checkbox" name="categorie" value="Flavoured Coffee" id="flavoured-coffee"> <label for="flavoured-coffee">Flavoured Coffee</label></li>
+                <li><input type="checkbox" name="categorie" value="Origin Coffee" id="origin-coffee"> <label for="origin-coffee">Origin Coffee</label></li>
+                <li><input type="checkbox" name="categorie" value="Speciality Coffee" id="speciality-coffee"> <label for="speciality-coffee">Speciality Coffee</label></li>
+              </ul>
+            </fieldset>
+            <fieldset>
+              <legend>Sizes</legend>
+              <ol class="filter-list">
+                <li><input type="checkbox" name="size" value="sm" id="sm"> <label for="sm">Small Coffee Bag</label></li>
+                <li><input type="checkbox" name="size" value="md" id="md"> <label for="md">Medium Coffee Bag</label></li>
+                <li><input type="checkbox" name="size" value="lg" id="lg"> <label for="lg">Large Coffee Bag</label></li>
+              </ol>
+            </fieldset>
+          </div>
           <fieldset>
-            <legend>Categories</legend>
-            <ul class="filter-list">
-              <li><input type="checkbox" name="categorie" value="Coffee" id="coffee"> <label for="coffee">Coffee</label></li>
-              <li><input type="checkbox" name="categorie" value="Blended Coffee" id="blended-coffee"> <label for="blended-coffee">Blended Coffee</label></li>
-              <li><input type="checkbox" name="categorie" value="Decaf Coffee" id="decaf-coffee"> <label for="decaf-coffee">Decaf Coffee</label></li>
-              <li><input type="checkbox" name="categorie" value="Espresso" id="espresso"> <label for="espresso">Espresso</label></li>
-              <li><input type="checkbox" name="categorie" value="Fairtrade" id="fairtrade"> <label for="fairtrade">Fairtrade</label></li>
-              <li><input type="checkbox" name="categorie" value="Flavoured Coffee" id="flavoured-coffee"> <label for="flavoured-coffee">Flavoured Coffee</label></li>
-              <li><input type="checkbox" name="categorie" value="Origin Coffee" id="origin-coffee"> <label for="origin-coffee">Origin Coffee</label></li>
-              <li><input type="checkbox" name="categorie" value="Speciality Coffee" id="speciality-coffee"> <label for="speciality-coffee">Speciality Coffee</label></li>
-            </ul>
+            <label for="sort">Sort</label>
+            <select name="sort" id="sort">
+              <option value="price-high">Price - highest to lowest</option>
+              <option value="price-low">Price - lowest to highest</option>
+              <option value="newest">Newest releases</option>
+            </select>
           </fieldset>
-          <fieldset>
-            <legend>Sizes</legend>
-            <ol class="filter-list">
-              <li><input type="checkbox" name="size" value="sm" id="sm"> <label for="sm">Small Coffee Bag</label></li>
-              <li><input type="checkbox" name="size" value="md" id="md"> <label for="md">Medium Coffee Bag</label></li>
-              <li><input type="checkbox" name="size" value="lg" id="lg"> <label for="lg">Large Coffee Bag</label></li>
-            </ol>
-          </fieldset>
-          <fieldset>
-            <legend>Ratings (above)</legend>
-            <ol class="filter-list">
-              <li>
-                <input type="radio" name="rating" value="4" id="aboveFour">
-                <label for="aboveFour">
-                  <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span>
-                </label>
-              </li>
-              <li>
-                <input type="radio" name="rating" value="3" id="aboveThree">
-                <label for="aboveThree">
-                  <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
-                </label>
-              </li>
-              <li>
-                <input type="radio" name="rating" value="2" id="aboveTwo">
-                <label for="aboveTwo">
-                  <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
-                </label>
-              </li>
-              <li>
-                <input type="radio" name="rating" value="1" id="aboveOne">
-                <label for="aboveOne">
-                  <span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
-                </label>
-              </li>
-            </ol>
-          </fieldset>
-        </div>
-        <fieldset>
-          <label for="sort">Sort</label>
-          <select name="sort" id="sort">
-            <option value="price-high">Price - highest to lowest</option>
-            <option value="price-low">Price - lowest to highest</option>
-            <option value="newest">Newest releases</option>
-          </select>
-        </fieldset>
-      </form>
+        </form>
+      </div>
 
       <section class="results">
         <h2 class="subheading">Results</h2>
 
         <!-- Product 1 -->
         <article class="product">
-          <header>
-            <img src="img/product.jpg" alt="Product Image">
-            <h3>Brazil</h3>
-            <dl>
-              <dt>Rating</dt>
-              <dd>4.4 <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
-            </dl>
-            <data value="35"><del>$40.00</del> <ins>$35.00</ins></data>
-            <p>This is an exemplary Brazil with notes of white chocolate, macadamia nut and nutty spread, supplemented by a low acridity, phenomenal pleasantness and a smooth completion.</p>
-            <a href="#">see more</a>
-          </header>
-          <form class="product-property">
-            <fieldset>
-              <legend>Sizes</legend>
-              <ol>
-                <li><label><input type="radio" name="size" value="s">Small</label></li>
-                <li><label><input type="radio" name="size" value="m">Medium</label></li>
-                <li><label><input type="radio" name="size" value="l">Large</label></li>
-              </ol>
-            </fieldset>
-          </form>
-          <footer class="product-footer">
-            <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
-            <button type="button"><span class="material-icons">favorite</span></button>
-          </footer>
+          <section>
+            <header>
+              <div class="image_container">
+                <img src="img/brazil-single-origin-coffee.png" alt="Product Image">
+              </div>              
+              <div class="rate">
+                <dl>
+                  <dd><p>Rating : 4.4</p> <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
+                </dl>
+              </div>
+              <h3 class="product-title">Brazil Single Origin</h3>
+              <div class="product-price">
+                <data value="35"><del>$40.00</del> <ins>$35.00</ins></data>
+                </div>
+              <!-- <div class="product-info"> -->
+             
+              <form class="product-property">
+                <fieldset class="sizes">
+                  <legend>Sizes</legend>
+                  <ol>
+                    <li class="size-label"><label><input type="radio" name="size" value="s"> Small</label></li>
+                    <li class="size-label"><label><input type="radio" name="size" value="m"> Medium</label></li>
+                    <li class="size-label"><label><input type="radio" name="size" value="l"> Large</label></li>
+                  </ol>
+                </fieldset>
+                <fieldset class="roast">
+                  <legend>Roast</legend>
+                  <ol>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                  </ol>
+                </fieldset>
+              </form>
+              <div class="product-description">
+              <p>It has a nutty and full bodied taste, which is incredible as a single origin and a staple for most blends. There complete focus on quality, high scoring, incomparable coffees really shows in the flavour.  <a href="#">see more</a></p>
+              </div>
+            </header>
+            <footer class="product-footer">
+              <div class="product-footer-btn">
+                <button type="button" class="add-to-cart"><i class="fa fa-shopping-cart fa-lg"></i> Add to Cart</button>
+              </div>            
+            </footer> 
+          </section>          
         </article>
 
         <!-- Product 2 -->
         <article class="product">
-          <header>
-            <img src="img/product.jpg" alt="Product Image">
-            <h3>Brazil</h3>
-            <dl>
-              <dt>Rating</dt>
-              <dd>4.4 <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
-            </dl>
-            <data value="35"><del>$40.00</del> <ins>$35.00</ins></data>
-            <p>This is an exemplary Brazil with notes of white chocolate, macadamia nut and nutty spread, supplemented by a low acridity, phenomenal pleasantness and a smooth completion.</p>
-            <a href="#">see more</a>
-          </header>
-          <form class="product-property">
-            <fieldset>
-              <legend>Sizes</legend>
-              <ol>
-                <li><label><input type="radio" name="size" value="s">Small</label></li>
-                <li><label><input type="radio" name="size" value="m">Medium</label></li>
-                <li><label><input type="radio" name="size" value="l">Large</label></li>
-              </ol>
-            </fieldset>
-          </form>
-          <footer class="product-footer">
-            <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
-            <button type="button"><span class="material-icons">favorite</span></button>
-          </footer>
+          <section>
+            <header>
+              <div class="image_container">
+                <img src="img/peru-single-origin-coffee.png" alt="Product Image">
+              </div>
+              <div class="rate">
+                <dl>
+                  <dd><p>Rating : 4.4</p> <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
+                </dl>
+              </div>
+              <h3 class="product-title">Peru Single Origin</h3>
+              <div class="product-price">
+                <data value="35"><del>$40.00</del> <ins>$35.00</ins></data>
+                </div>
+              <!-- <div class="product-info"> -->
+             
+              <form class="product-property">
+                 <fieldset class="sizes">
+                  <legend>Sizes</legend>
+                  <ol>
+                    <li class="size-label"><label><input type="radio" name="size" value="s"> Small</label></li>
+                    <li class="size-label"><label><input type="radio" name="size" value="m"> Medium</label></li>
+                    <li class="size-label"><label><input type="radio" name="size" value="l"> Large</label></li>
+                  </ol>
+                </fieldset>
+                <fieldset class="roast">
+                  <legend>Roast</legend>
+                  <ol>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                  </ol>
+                </fieldset>
+              </form>
+              <div class="product-description">
+              <p>As an origin, Peru has all the conditions necessary to produce world-class coffee: Its high elevation; prominence of good varieties like Typica, Bourbon, and Caturra. The small farm holders and cooperatives are operating in a quality focused movement especially its organic practises and farming techniques.<a href="#">see more</a></p>
+              </div>
+            </header>
+            <footer class="product-footer">
+              <button type="button" class="add-to-cart"><i class="fa fa-shopping-cart fa-lg"></i> Add to Cart</button>
+            </footer> 
+          </section>          
         </article>
 
         <!-- Product 3 -->
         <article class="product">
-          <header>
-            <img src="img/product.jpg" alt="Product Image">
-            <h3>Brazil</h3>
-            <dl>
-              <dt>Rating</dt>
-              <dd>4.4 <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
-            </dl>
-            <data value="35"><del>$40.00</del> <ins>$35.00</ins></data>
-            <p>This is an exemplary Brazil with notes of white chocolate, macadamia nut and nutty spread, supplemented by a low acridity, phenomenal pleasantness and a smooth completion.</p>
-            <a href="#">see more</a>
-          </header>
-          <form class="product-property">
-            <fieldset>
-              <legend>Sizes</legend>
-              <ol>
-                <li><label><input type="radio" name="size" value="s">Small</label></li>
-                <li><label><input type="radio" name="size" value="m">Medium</label></li>
-                <li><label><input type="radio" name="size" value="l">Large</label></li>
-              </ol>
-            </fieldset>
-          </form>
-          <footer class="product-footer">
-            <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
-            <button type="button"><span class="material-icons">favorite</span></button>
-          </footer>
+          <section>
+            <header>
+              <div class="image_container">
+                <img src="img/blend-coffee.png" alt="Product Image">
+              </div>
+              <div class="rate">
+                <dl>
+                  <dd><p>Rating : 4.4</p> <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
+                </dl>
+              </div>
+              <h3 class="product-title">Escapada Blend</h3>
+              <div class="product-price">
+                <data value="35"><del>$40.00</del> <ins>$35.00</ins></data>
+                </div>
+              <!-- <div class="product-info"> -->
+             
+              <form class="product-property">
+                 <fieldset class="sizes">
+                  <legend>Sizes</legend>
+                  <ol>
+                    <li class="size-label"><label><input type="radio" name="size" value="s"> Small</label></li>
+                    <li class="size-label"><label><input type="radio" name="size" value="m"> Medium</label></li>
+                    <li class="size-label"><label><input type="radio" name="size" value="l"> Large</label></li>
+                  </ol>
+                </fieldset>
+                <fieldset class="roast">
+                  <legend>Roast</legend>
+                  <ol>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                  </ol>
+                </fieldset>
+              </form>
+              <div class="product-description">
+              <p>Made for the adventures!! Whether you are hiking up a mountain, early morning fishing on the river or exploring new lands, adventurers should drink great coffee. So begin your escapada right with a coffee made for you! <a href="#">see more</a></p>
+              </div>
+            </header>
+            <footer class="product-footer">
+              <button type="button" class="add-to-cart"><i class="fa fa-shopping-cart fa-lg"></i> Add to Cart</button>
+            </footer> 
+          </section>          
         </article>
-  
+
         <!-- Product 4 -->
+       
         <article class="product">
-          <header>
-            <img src="img/product.jpg" alt="Product Image">
-            <h3>Brazil</h3>
-            <dl>
-              <dt>Rating</dt>
-              <dd>4.4 <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
-            </dl>
-            <data value="35"><del>$40.00</del> <ins>$35.00</ins></data>
-            <p>This is an exemplary Brazil with notes of white chocolate, macadamia nut and nutty spread, supplemented by a low acridity, phenomenal pleasantness and a smooth completion.</p>
-            <a href="#">see more</a>
-          </header>
-          <form class="product-property">
-            <fieldset>
-              <legend>Sizes</legend>
-              <ol>
-                <li><label><input type="radio" name="size" value="s">Small</label></li>
-                <li><label><input type="radio" name="size" value="m">Medium</label></li>
-                <li><label><input type="radio" name="size" value="l">Large</label></li>
-              </ol>
-            </fieldset>
-          </form>
-          <footer class="product-footer">
-            <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
-            <button type="button"><span class="material-icons">favorite</span></button>
-          </footer>
+          <section>
+            <header>
+              <div class="image_container">
+                <img src="img/one-tree-blend-coffee.png" alt="Product Image">
+              </div>
+              <div class="rate">
+                <dl>
+                  <dd><p>Rating : 4.4</p> <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
+                </dl>
+              </div>
+              <h3 class="product-title">One Tree Blend</h3>
+              <div class="product-price">
+                <data value="35"><del>$40.00</del> <ins>$35.00</ins></data>
+                </div>
+              <!-- <div class="product-info"> -->
+             
+              <form class="product-property">
+                 <fieldset class="sizes">
+                  <legend>Sizes</legend>
+                  <ol>
+                    <li class="size-label"><label><input type="radio" name="size" value="s"> Small</label></li>
+                    <li class="size-label"><label><input type="radio" name="size" value="m"> Medium</label></li>
+                    <li class="size-label"><label><input type="radio" name="size" value="l"> Large</label></li>
+                  </ol>
+                </fieldset>
+                <fieldset class="roast">
+                  <legend>Roast</legend>
+                  <ol>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                  </ol>
+                </fieldset>
+              </form>
+              <div class="product-description">
+              <p>One For One! We have partnered with one tree planted, an organisation on a mission to tackle reforestation at all levels and have planted over 4 million trees and counting so far.  <a href="#">see more</a></p>
+              </div>
+            </header>
+            <footer class="product-footer">
+              <button type="button" class="add-to-cart"><i class="fa fa-shopping-cart fa-lg"></i> Add to Cart</button>
+            </footer> 
+          </section>          
         </article>
 
         <!-- Product 5 -->
         <article class="product">
-          <header>
-            <img src="img/product.jpg" alt="Product Image">
-            <h3>Brazil</h3>
-            <dl>
-              <dt>Rating</dt>
-              <dd>4.4 <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
-            </dl>
-            <data value="35"><del>$40.00</del> <ins>$35.00</ins></data>
-            <p>This is an exemplary Brazil with notes of white chocolate, macadamia nut and nutty spread, supplemented by a low acridity, phenomenal pleasantness and a smooth completion.</p>
-            <a href="#">see more</a>
-          </header>
-          <form class="product-property">
-            <fieldset>
-              <legend>Sizes</legend>
-              <ol>
-                <li><label><input type="radio" name="size" value="s">Small</label></li>
-                <li><label><input type="radio" name="size" value="m">Medium</label></li>
-                <li><label><input type="radio" name="size" value="l">Large</label></li>
-              </ol>
-            </fieldset>
-          </form>
-          <footer class="product-footer">
-            <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
-            <button type="button"><span class="material-icons">favorite</span></button>
-          </footer>
+          <section>
+            <header>
+              <div class="image_container">
+                <img src="img/moana-coffee.png" alt="Product Image">
+              </div>
+              <div class="rate">
+                <dl>
+                  <dd><p>Rating : 4.4</p> <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
+                </dl>
+              </div>
+              <h3 class="product-title">MOANA Speciality Blend</h3>
+              <div class="product-price">
+                <data value="35"><del>$40.00</del> <ins>$35.00</ins></data>
+                </div>
+              <!-- <div class="product-info"> -->
+             
+              <form class="product-property">
+                 <fieldset class="sizes">
+                  <legend>Sizes</legend>
+                  <ol>
+                    <li class="size-label"><label><input type="radio" name="size" value="s"> Small</label></li>
+                    <li class="size-label"><label><input type="radio" name="size" value="m"> Medium</label></li>
+                    <li class="size-label"><label><input type="radio" name="size" value="l"> Large</label></li>
+                  </ol>
+                </fieldset>
+                <fieldset class="roast">
+                  <legend>Roast</legend>
+                  <ol>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                  </ol>
+                </fieldset>
+              </form>
+              <div class="product-description">
+              <p>The Ocean couldn't express this enough, she is beautiful, mysterious, awe inspiring and free and we hope to encompass this spirit and deliver it through this amazing specialty blend MOANA. <a href="#">see more</a></p>
+              </div>
+            </header>
+            <footer class="product-footer">
+              <button type="button" class="add-to-cart"><i class="fa fa-shopping-cart fa-lg"></i> Add to Cart</button>
+            </footer> 
+          </section>          
         </article>
 
         <!-- Product 6 -->
         <article class="product">
-          <header>
-            <img src="img/product.jpg" alt="Product Image">
-            <h3>Brazil</h3>
-            <dl>
-              <dt>Rating</dt>
-              <dd>4.4 <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
-            </dl>
-            <data value="35"><del>$40.00</del> <ins>$35.00</ins></data>
-            <p>This is an exemplary Brazil with notes of white chocolate, macadamia nut and nutty spread, supplemented by a low acridity, phenomenal pleasantness and a smooth completion.</p>
-            <a href="#">see more</a>
-          </header>
-          <form class="product-property">
-            <fieldset>
-              <legend>Sizes</legend>
-              <ol>
-                <li><label><input type="radio" name="size" value="s">Small</label></li>
-                <li><label><input type="radio" name="size" value="m">Medium</label></li>
-                <li><label><input type="radio" name="size" value="l">Large</label></li>
-              </ol>
-            </fieldset>
-          </form>
-          <footer class="product-footer">
-            <button type="button"><span class="material-icons">add_shopping_cart</span> Add to Cart</button>
-            <button type="button"><span class="material-icons">favorite</span></button>
-          </footer>
+          <section>
+            <header>
+              <div class="image_container">
+                <img src="img/one-tree-blend-coffee.png" alt="Product Image">
+              </div>
+              <div class="rate">
+                <dl>
+                  <dd><p>Rating : 4.4</p> <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
+                </dl>
+              </div>
+              <h3 class="product-title">One Tree Blend</h3>
+              <div class="product-price">
+                <data value="35"><del>$40.00</del> <ins>$35.00</ins></data>
+                </div>
+              <!-- <div class="product-info"> -->
+             
+              <form class="product-property">
+                 <fieldset class="sizes">
+                  <legend>Sizes</legend>
+                  <ol>
+                    <li class="size-label"><label><input type="radio" name="size" value="s"> Small</label></li>
+                    <li class="size-label"><label><input type="radio" name="size" value="m"> Medium</label></li>
+                    <li class="size-label"><label><input type="radio" name="size" value="l"> Large</label></li>
+                  </ol>
+                </fieldset>
+                <fieldset class="roast">
+                  <legend>Roast</legend>
+                  <ol>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                  </ol>
+                </fieldset>
+              </form>
+              <div class="product-description">
+              <p>One For One! We have partnered with one tree planted, an organisation on a mission to tackle reforestation at all levels and have planted over 4 million trees and counting so far. <a href="#">see more</a></p>
+              </div>
+            </header>
+            <footer class="product-footer">
+              <button type="button" class="add-to-cart"><i class="fa fa-shopping-cart fa-lg"></i> Add to Cart</button>
+            </footer> 
+          </section>          
         </article>
       </section>
 
@@ -303,26 +396,21 @@
           <li><a href="#" aria-label="Page 2">2</a></li>
           <li><a href="#" aria-label="Page 3">3</a></li>
           <li><a href="#" aria-label="Page 4">4</a></li>
-          <li><a href="#" aria-label="Page 5">5</a></li>
         </ol>
       </nav>
     </main>
 
-    <!-- To-Do:- Add the social media icons using font awesome css library -->
     <footer class="page-footer">
-      <ul class="social">
-        <li><a href="#"><span class="material-icons">face</span> Facebook</a></li>
-        <li><a href="#"><span class="material-icons">camera_alt</span> Instagram</a></li>
-        <li><a href="#"><span class="material-icons">alternate_email</span> Twitter</a></li>
-      </ul>
-      <nav aria-label="Legal">
-        <ul class="legal">
-          <li><a href="#">Terms of Use</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Accessibility Policy</a></li>
-        </ul>
+      <nav>
+        <p>Copyright (c) 1970</p>
+        <a href="#">Terms</a>|<a href="#" >Privacy</a>
       </nav>
-      <p class="copyright">&copy; Copyright, 1991.</p>
+      <div class="footer-logo">
+        <div class="footer-right">  
+            <a href="https://www.facebook.com/"><i class="fa fa-facebook-square"></i></a>
+            <a href="https://twitter.com/"><i class="fa fa-twitter-square" ></i></a>      
+          </div>
+        </div>
     </footer>
 
   </body>
