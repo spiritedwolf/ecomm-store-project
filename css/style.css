@@ -73,6 +73,11 @@ main {
    
 }
 
+.product-link {
+    color: inherit;
+    text-decoration: none;
+}
+
 .products, .results {
     border:0px solid var(--color-grey);
     border-top-width: 1px;
@@ -161,6 +166,10 @@ label.rate{
    justify-content: space-between; 
 }
 
+.pagination p {
+    text-align: center;
+}
+
 /* --------------------------------------------------------- */
 
 .page-footer{
@@ -228,6 +237,7 @@ label.rate{
     font-size: small;
 
 }
+
 /* ------------------------------------------------- */
 @media only screen and (min-width: 48em){
     main{
