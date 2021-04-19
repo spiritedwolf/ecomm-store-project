@@ -2,6 +2,10 @@
     background-image: none;
 }
 
+.product-title {
+    text-align: center;
+}
+
 @media only screen and (min-width: 48em){
     main{
         background-color: white;
