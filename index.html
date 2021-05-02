@@ -76,7 +76,7 @@
             </fieldset>
             <fieldset>
               <legend>Sizes</legend>
-              <ol class="filter-list">
+              <ol class="filter-list size">
                 <li><input type="checkbox" name="size" value="sm" id="sm"> <label for="sm">Small Coffee Bag</label></li>
                 <li><input type="checkbox" name="size" value="md" id="md"> <label for="md">Medium Coffee Bag</label></li>
                 <li><input type="checkbox" name="size" value="lg" id="lg"> <label for="lg">Large Coffee Bag</label></li>
@@ -84,14 +84,17 @@
             </fieldset>
           </div>
           <fieldset>
-            <label for="filterPr">Minimum Price</label>
-            <input type="range" name="price" id="filterPrice" value="0" min="0" max="100" step="10">
-            <output for="filterPrice">0</output>
-            <!-- <select name="sort" id="sort">
-              <option value="price-high">Price - highest to lowest</option>
+            <label for="sort">Filter By</label>
+            <select name="sort" id="sort">
               <option value="price-low">Price - lowest to highest</option>
+              <option value="price-high">Price - highest to lowest</option>
               <option value="newest">Newest releases</option>
-            </select> -->
+            </select>
+
+            <section><label for="filterPr">Maximum Price</label>
+            <input type="range" name="price" id="filterPrice" value="100" min="20" max="100" step="10">
+            <output for="filterPrice">$100</output>
+          </section>
           </fieldset>
         </form>
       </div>
