@@ -111,3 +111,66 @@ const productsAr = [
     }
 ];
 
+// select the section with the class name results
+const productTable = document.querySelector(`.results`);
+
+const setProductToTable = function(array) {
+
+    array.forEach((item) => {
+        const createItem = document.createElement(`article`);
+        createItem.classList.add(`product`);
+
+        createItem.innerHTML = `
+        <section>
+            <header>
+              <div class="image_container">
+                <img src="img/${item.image}" alt="Product Image">
+              </div>              
+              <div class="rate">
+                <dl>
+                  <dd><p>Rating : ${item.rating}</p> <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
+                </dl>
+              </div>
+              <a href="product.html" class="product-link"><h3 class="product-title">${item.name}</h3></a>
+              <div class="product-price">
+                <data value="${item.salePrice}"><del>$${item.orignalPrice}</del> <ins>$${item.salePrice}</ins></data>
+                </div>
+              <!-- <div class="product-info"> -->
+         
+              <form class="product-property">
+                <fieldset class="sizes">
+                  <legend>Sizes</legend>
+                  <ol>
+                    <li class="size-label"><label><input type="radio" name="size" value="s"> Small</label></li>
+                    <li class="size-label"><label><input type="radio" name="size" value="m"> Medium</label></li>
+                    <li class="size-label"><label><input type="radio" name="size" value="l"> Large</label></li>
+                  </ol>
+                </fieldset>
+                <fieldset class="roast">
+                  <legend>Roast</legend>
+                  <ol>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                  </ol>
+                </fieldset>
+              </form>
+              <div class="product-description">
+              <p>${item.description}<a href="#">see more</a></p>
+              </div>
+            </header>
+            <footer class="product-footer">
+              <div class="product-footer-btn">
+                <button type="button" class="add-to-cart"><i class="fa fa-shopping-cart fa-lg"></i> Add to Cart</button>
+              </div>            
+            </footer> 
+          </section> 
+          `
+        productTable.appendChild(createItem);
+    });
+
+}
+
+setProductToTable(productsAr);
