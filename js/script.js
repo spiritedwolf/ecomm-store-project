@@ -2,7 +2,7 @@ const productsAr = [
     {
         id: 1,
         image: `brazil-single-origin-coffee.png`,
-        rating: 4,
+        rating: 5,
         name: `Brazil Single Origin`,
         orignalPrice: 40,
         salePrice:  35,
@@ -35,7 +35,7 @@ const productsAr = [
     {
         id: 4,
         image: `one-tree-blend-coffee.png`,
-        rating: 4.4,
+        rating: 5,
         name: `One Tree Blend`,
         orignalPrice: 50,
         salePrice:  48,
@@ -46,7 +46,7 @@ const productsAr = [
     {
         id: 5,
         image: `moana-coffee.png`,
-        rating: 4.8,
+        rating: 5,
         name: `MOANA Speciality Blend`,
         orignalPrice: 75,
         salePrice:  59,
@@ -79,7 +79,7 @@ const productsAr = [
     {
         id: 8,
         image: `blend-coffee.png`,
-        rating: 5,
+        rating: 3,
         name: `Ultra Escapada Blend`,
         orignalPrice: 20,
         salePrice:  18,
@@ -90,7 +90,7 @@ const productsAr = [
     {
         id: 9,
         image: `one-tree-blend-coffee.png`,
-        rating: 4.4,
+        rating: 5,
         name: `Ultra One Tree Blend`,
         orignalPrice: 50,
         salePrice:  48,
@@ -101,7 +101,7 @@ const productsAr = [
     {
         id: 10,
         image: `moana-coffee.png`,
-        rating: 4.8,
+        rating: 4,
         name: `Ultra MOANA Speciality Blend`,
         orignalPrice: 75,
         salePrice:  59,
@@ -112,13 +112,18 @@ const productsAr = [
 ];
 
 const searchFilter = {
-    searchQuery: '',
     price: 0
   }
 
 // select the section with the class name results
 const productTable = document.querySelector(`.results`);
+// select the input field with the id "filterPrice"
 const filterPrice = document.querySelector(`#filterPrice`);
+// select the element with the id "sort"
+const filterSort = document.querySelector(`#sort`);
+
+
+
 const setProductToTable = function(array) {
     productTable.innerHTML = ``;
 
@@ -126,6 +131,30 @@ const setProductToTable = function(array) {
         const createItem = document.createElement(`article`);
         
         createItem.classList.add(`product`);
+        
+        let totalRating = ``;
+        
+        for(let i=0;i < item.rating; i++) {
+            let listHtml = `
+            <span class="material-icons">star</span>
+            `;
+            totalRating += listHtml;
+        };
+        let sizeType = ``;
+        for(let i=0;i < (item.size).length; i++) {
+            let listHtml = `
+            <li class="size-label"><label><input type="radio" name="size" value="s">${(item.size)[i]}</label></li>
+            `;
+            sizeType += listHtml;
+        };
+
+        let totalRoast = ``;
+        for(let i=0;i < item.roast; i++) {
+            let roastHtml = `
+            <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+            `;
+            totalRoast += roastHtml;
+        } 
 
         createItem.innerHTML = `
         <section>
@@ -135,7 +164,7 @@ const setProductToTable = function(array) {
               </div>              
               <div class="rate">
                 <dl>
-                  <dd><p>Rating : ${item.rating}</p> <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
+                  <dd><p>Rating : ${item.rating}</p> ${totalRating}</dd>
                 </dl>
               </div>
               <a href="product.html" class="product-link"><h3 class="product-title">${item.name}</h3></a>
@@ -148,19 +177,13 @@ const setProductToTable = function(array) {
                 <fieldset class="sizes">
                   <legend>Sizes</legend>
                   <ol>
-                    <li class="size-label"><label><input type="radio" name="size" value="s"> Small</label></li>
-                    <li class="size-label"><label><input type="radio" name="size" value="m"> Medium</label></li>
-                    <li class="size-label"><label><input type="radio" name="size" value="l"> Large</label></li>
+                    ${sizeType}
                   </ol>
                 </fieldset>
                 <fieldset class="roast">
                   <legend>Roast</legend>
                   <ol>
-                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
-                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
-                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
-                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
-                    <li><label><img class="roast-img" src="img/roast.svg" alt=""></label></li>
+                    ${totalRoast}
                   </ol>
                 </fieldset>
               </form>
@@ -181,11 +204,16 @@ const setProductToTable = function(array) {
 }
 
 const filterAndSort = function(...args) {
-    filtterPriceRange = args[0].price;
-    const filterPrice = productsAr.filter(function(item) {
-        return (item.salePrice > 0  && filtterPriceRange >= item.salePrice);
-    })
-    setProductToTable(filterPrice);
+    let filtterPriceRange = args[0].price;
+
+    let filterProduct = productsAr.filter(function(item) {
+        return (item.salePrice <= filtterPriceRange);
+    });
+
+
+    // console.log(filterProduct)
+    setProductToTable(filterProduct);
+
 
 }
 
@@ -195,7 +223,7 @@ filterPrice.addEventListener(`input`, function(event) {
     // The <output> for the range (so we can see what's happening)
     const theOutput = document.querySelector(`output[for="filterPrice"]`);
     // put the range "value" in the output
-    theOutput.textContent = priceRange.value;  
+    theOutput.textContent = ` $ ${priceRange.value}`;  
     // Put the value into the filter object
     searchFilter.price = Number(priceRange.value);
     
@@ -205,4 +233,41 @@ filterPrice.addEventListener(`input`, function(event) {
   })
 
 
+
+filterSort.addEventListener(`click`, function(event) {
+    // Function to sort the productAr array elements by it's sale price from low to high 
+    const lowToHighSort = (productsAr = []) => {
+        const sortPrice = (min, max) => {
+            return +min.salePrice - +max.salePrice;
+        };
+        productsAr.sort(sortPrice);
+        setProductToTable(productsAr);
+    };
+
+    const highToLowSort = (productsAr = []) => {
+    // Function to sort the productAr array elements by it's sale price from high to low 
+
+        const sortPrice = (min, max) => {
+            return +max.salePrice - +min.salePrice;
+        };
+        productsAr.sort(sortPrice);
+        setProductToTable(productsAr);
+    };
+    console.log(filterSort.selectedIndex);
+
+    if (filterSort.selectedIndex == 0) {
+        lowToHighSort(productsAr);
+    }
+    else if (filterSort.selectedIndex == 1) {
+        highToLowSort(productsAr);
+    }
+    else {
+        return 0;
+    }
+
+});
+
+
 setProductToTable(productsAr);
+
+
