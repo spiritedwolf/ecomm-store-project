@@ -17,7 +17,7 @@ const productsAr = [
         name: `Peru Single Origin`,
         orignalPrice: 55,
         salePrice:  25,
-        size: [`Small`, `Medium`, `Large`],
+        size: [`Small`, `Large`],
         roast: 5,
         description: `As an origin, Peru has all the conditions necessary to produce world-class coffee: Its high elevation; prominence of good varieties like Typica, Bourbon, and Caturra. The small farm holders and cooperatives are operating in a quality focused movement especially its organic practises and farming techniques.`
     },
@@ -28,7 +28,7 @@ const productsAr = [
         name: `Escapada Blend`,
         orignalPrice: 20,
         salePrice:  18,
-        size: [`Small`, `Medium`, `Large`],
+        size: [`Small`, `Medium`],
         roast: 4,
         description: `Made for the adventures!! Whether you are hiking up a mountain, early morning fishing on the river or exploring new lands, adventurers should drink great coffee. So begin your escapada right with a coffee made for you!`
     },
@@ -39,7 +39,7 @@ const productsAr = [
         name: `One Tree Blend`,
         orignalPrice: 50,
         salePrice:  48,
-        size: [`Small`, `Medium`, `Large`],
+        size: [`Medium`, `Large`],
         roast: 5,
         description: `One For One! We have partnered with one tree planted, an organisation on a mission to tackle reforestation at all levels and have planted over 4 million trees and counting so far.`
     },
@@ -58,10 +58,10 @@ const productsAr = [
         id: 6,
         image: `brazil-single-origin-coffee.png`,
         rating: 4,
-        name: `Brazil Single Origin`,
+        name: `Ultra Brazil Single Origin`,
         orignalPrice: 40,
         salePrice:  35,
-        size: [`Small`, `Medium`, `Large`],
+        size: [`Medium`, `Large`],
         roast: 5,
         description: `It has a nutty and full bodied taste, which is incredible as a single origin and a staple for most blends. There complete focus on quality, high scoring, incomparable coffees really shows in the flavour.`
     },
@@ -69,7 +69,7 @@ const productsAr = [
         id: 7,
         image: `peru-single-origin-coffee.png`,
         rating: 4,
-        name: `Peru Single Origin`,
+        name: `Ultra Peru Single Origin  II`,
         orignalPrice: 55,
         salePrice:  25,
         size: [`Small`, `Medium`, `Large`],
@@ -80,7 +80,7 @@ const productsAr = [
         id: 8,
         image: `blend-coffee.png`,
         rating: 5,
-        name: `Escapada Blend`,
+        name: `Ultra Escapada Blend`,
         orignalPrice: 20,
         salePrice:  18,
         size: [`Small`, `Medium`, `Large`],
@@ -91,10 +91,10 @@ const productsAr = [
         id: 9,
         image: `one-tree-blend-coffee.png`,
         rating: 4.4,
-        name: `One Tree Blend`,
+        name: `Ultra One Tree Blend`,
         orignalPrice: 50,
         salePrice:  48,
-        size: [`Small`, `Medium`, `Large`],
+        size: [`Small`],
         roast: 5,
         description: `One For One! We have partnered with one tree planted, an organisation on a mission to tackle reforestation at all levels and have planted over 4 million trees and counting so far.`
     },
@@ -102,7 +102,7 @@ const productsAr = [
         id: 10,
         image: `moana-coffee.png`,
         rating: 4.8,
-        name: `MOANA Speciality Blend`,
+        name: `Ultra MOANA Speciality Blend`,
         orignalPrice: 75,
         salePrice:  59,
         size: [`Small`, `Medium`, `Large`],
@@ -111,13 +111,20 @@ const productsAr = [
     }
 ];
 
+const searchFilter = {
+    searchQuery: '',
+    price: 0
+  }
+
 // select the section with the class name results
 const productTable = document.querySelector(`.results`);
-
+const filterPrice = document.querySelector(`#filterPrice`);
 const setProductToTable = function(array) {
+    productTable.innerHTML = ``;
 
     array.forEach((item) => {
         const createItem = document.createElement(`article`);
+        
         createItem.classList.add(`product`);
 
         createItem.innerHTML = `
@@ -172,5 +179,30 @@ const setProductToTable = function(array) {
     });
 
 }
+
+const filterAndSort = function(...args) {
+    filtterPriceRange = args[0].price;
+    const filterPrice = productsAr.filter(function(item) {
+        return (item.salePrice > 0  && filtterPriceRange >= item.salePrice);
+    })
+    setProductToTable(filterPrice);
+
+}
+
+filterPrice.addEventListener(`input`, function(event) {
+    // The range slider
+    const priceRange = event.target;
+    // The <output> for the range (so we can see what's happening)
+    const theOutput = document.querySelector(`output[for="filterPrice"]`);
+    // put the range "value" in the output
+    theOutput.textContent = priceRange.value;  
+    // Put the value into the filter object
+    searchFilter.price = Number(priceRange.value);
+    
+    // Now search
+    filterAndSort(searchFilter);
+  
+  })
+
 
 setProductToTable(productsAr);
