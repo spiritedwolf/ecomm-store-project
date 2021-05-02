@@ -84,18 +84,20 @@
             </fieldset>
           </div>
           <fieldset>
-            <label for="sort">Sort</label>
-            <select name="sort" id="sort">
+            <label for="filterPr">Minimum Price</label>
+            <input type="range" name="price" id="filterPrice" value="0" min="0" max="100" step="10">
+            <output for="filterPrice">0</output>
+            <!-- <select name="sort" id="sort">
               <option value="price-high">Price - highest to lowest</option>
               <option value="price-low">Price - lowest to highest</option>
               <option value="newest">Newest releases</option>
-            </select>
+            </select> -->
           </fieldset>
         </form>
       </div>
 
+      <h2 class="subheading">Results</h2>
       <section class="results">
-        <h2 class="subheading">Results</h2>
       </section>
 
       <nav aria-label="Pagination" class="pagination">
