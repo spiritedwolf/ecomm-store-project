@@ -1,133 +1,114 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NN Coffee</title>
-    <meta name="description" content="The coffee that will keep you awake.">
+    <title>NerdyNina Coffee</title>
+    <meta name="description" content="he coffee that will keep you awake."> 
     <meta name="author" content="Spirit">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/brands.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <header class="page-header">
-      <div class="logo">
-      <a href="index.html">
-        <img src="img/logo-black.png" alt="NN coffee logo">
-      </a>
-    </div>
+    <header class="product-header">
+      <div class="product-content">
+        <div class="logo">
+          <h1>NerdyNina Coffee</h1>
+        </div>
 
-      <!-- Navigation menu and toggle button (non-functional) -->
-      <div class="hamburger">
-        <button type="button" class="nav-toggle">
-          <i class="fa fa-chevron-circle-down">Menu</i>
-        </button>
-      </div>
-      <nav aria-label="Primary" class="navigation">
-        <ul class="menu">
-          <li><a href="#">Shop</a>
-            <ul class="submenu">
-              <li><a href="#">North America</a></li>
-              <li><a href="#">Europe</a></li>
-              <li><a href="#">Asia</a></li>
-            </ul>
-          </li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-
-      <!-- Search for a product (non-functional) -->
-      <div class="search-nav">
-        <form class="search">
-          <label>Search
-            <input type="search" name="find" id="find">
-          </label>
-          <button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
-        </form>
-      </div>
+        <div class="search-nav">
+          <form class="search">
+            <label>Search
+              <input type="search" name="find" id="find">
+            </label>
+            <button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </form>
+        </div>
+        
     </header>
 
-    <main class="products">
-      <header class="heading">
-        <h1>Buy Coffee</h1>
-      </header>
-
-      <!-- Filtering product form -->
-      <div class="sidebar">
-        <form class="filters">
-          <h2>Filters</h2>
-
-          <div class="filter-options">
-            <fieldset>
-              <legend>Categories</legend>
-              <ul class="filter-list">
-                <li><input type="checkbox" name="categorie" value="Coffee" id="coffee"> <label for="coffee">Coffee</label></li>
-                <li><input type="checkbox" name="categorie" value="Blended Coffee" id="blended-coffee"> <label for="blended-coffee">Blended Coffee</label></li>
-                <li><input type="checkbox" name="categorie" value="Decaf Coffee" id="decaf-coffee"> <label for="decaf-coffee">Decaf Coffee</label></li>
-                <li><input type="checkbox" name="categorie" value="Espresso" id="espresso"> <label for="espresso">Espresso</label></li>
-                <li><input type="checkbox" name="categorie" value="Fairtrade" id="fairtrade"> <label for="fairtrade">Fairtrade</label></li>
-                <li><input type="checkbox" name="categorie" value="Flavoured Coffee" id="flavoured-coffee"> <label for="flavoured-coffee">Flavoured Coffee</label></li>
-                <li><input type="checkbox" name="categorie" value="Origin Coffee" id="origin-coffee"> <label for="origin-coffee">Origin Coffee</label></li>
-                <li><input type="checkbox" name="categorie" value="Speciality Coffee" id="speciality-coffee"> <label for="speciality-coffee">Speciality Coffee</label></li>
+    <main>
+      <div class="container">
+        <nav aria-label="Primary" class="navigation">
+          <ul class="menu">
+            <li><a href="#">Shop</a>
+              <ul class="submenu">
+                <li><a href="#">North America</a></li>
+                <li><a href="#">Europe</a></li>
+                <li><a href="#">Asia</a></li>
               </ul>
-            </fieldset>
-            <fieldset>
-              <legend>Sizes</legend>
-              <ol class="filter-list size">
-                <li><input type="checkbox" name="size" value="sm" id="sm"> <label for="sm">Small Coffee Bag</label></li>
-                <li><input type="checkbox" name="size" value="md" id="md"> <label for="md">Medium Coffee Bag</label></li>
-                <li><input type="checkbox" name="size" value="lg" id="lg"> <label for="lg">Large Coffee Bag</label></li>
-              </ol>
-            </fieldset>
-          </div>
-          <fieldset>
-            <label for="sort">Filter By</label>
-            <select name="sort" id="sort">
-              <option value="price-low">Price - lowest to highest</option>
-              <option value="price-high">Price - highest to lowest</option>
-              <option value="newest">Newest releases</option>
-            </select>
-
-            <section><label for="filterPr">Maximum Price</label>
-            <input type="range" name="price" id="filterPrice" value="100" min="20" max="100" step="10">
-            <output for="filterPrice">$100</output>
-          </section>
-          </fieldset>
-        </form>
-      </div>
-
-      <h2 class="subheading">Results</h2>
-      <section class="results">
-      </section>
-
-      <nav aria-label="Pagination" class="pagination">
-        <p>1-10 of 23 products found</p>
-        <ol class="pages">
-          <li><a href="#" aria-label="Current Page, Page 1" aria-current="true">1</a></li>
-          <li><a href="#" aria-label="Page 2">2</a></li>
-          <li><a href="#" aria-label="Page 3">3</a></li>
-          <li><a href="#" aria-label="Page 4">4</a></li>
-        </ol>
-      </nav>
-    </main>
-
-    <footer class="page-footer">
-      <nav>
-        <p>Copyright (c) 1970</p>
-        <a href="#">Terms</a>|<a href="#" >Privacy</a>
-      </nav>
-      <div class="footer-logo">
-        <div class="footer-right">  
-            <a href="https://www.facebook.com/"><i class="fa fa-facebook-square"></i></a>
-            <a href="https://twitter.com/"><i class="fa fa-twitter-square" ></i></a>      
-          </div>
+            </li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+    
+        <div class="sidebar">
+          <section id="ingredients">
+            <form class="filters">
+              <h2>Filters</h2>
+    
+              <div class="filter-options">
+                <fieldset>
+                  <legend>Categories</legend>
+                  <ul class="filter-list">
+                    <li><input type="checkbox" name="categorie" value="Coffee" id="coffee"> <label for="coffee">Coffee</label></li>
+                    <li><input type="checkbox" name="categorie" value="Blended Coffee" id="blended-coffee"> <label for="blended-coffee">Blended Coffee</label></li>
+                    <li><input type="checkbox" name="categorie" value="Decaf Coffee" id="decaf-coffee"> <label for="decaf-coffee">Decaf Coffee</label></li>
+                    <li><input type="checkbox" name="categorie" value="Espresso" id="espresso"> <label for="espresso">Espresso</label></li>
+                    <li><input type="checkbox" name="categorie" value="Fairtrade" id="fairtrade"> <label for="fairtrade">Fairtrade</label></li>
+                    <li><input type="checkbox" name="categorie" value="Flavoured Coffee" id="flavoured-coffee"> <label for="flavoured-coffee">Flavoured Coffee</label></li>
+                    <li><input type="checkbox" name="categorie" value="Origin Coffee" id="origin-coffee"> <label for="origin-coffee">Origin Coffee</label></li>
+                    <li><input type="checkbox" name="categorie" value="Speciality Coffee" id="speciality-coffee"> <label for="speciality-coffee">Speciality Coffee</label></li>
+                  </ul>
+                </fieldset>
+                <fieldset>
+                  <legend>Sizes</legend>
+                  <ol class="filter-list size">
+                    <li><input type="checkbox" name="size" value="sm" id="sm"> <label for="sm">Small Coffee Bag</label></li>
+                    <li><input type="checkbox" name="size" value="md" id="md"> <label for="md">Medium Coffee Bag</label></li>
+                    <li><input type="checkbox" name="size" value="lg" id="lg"> <label for="lg">Large Coffee Bag</label></li>
+                  </ol>
+                </fieldset>
+              </div>
+              <fieldset>
+                <label for="sort">Filter By</label>
+                <select name="sort" id="sort">
+                  <option value="price-low">Price - lowest to highest</option>
+                  <option value="price-high">Price - highest to lowest</option>
+                  <option value="newest">Newest releases</option>
+                </select>
+    
+                <section><label for="filterPr">Maximum Price</label>
+                <input class="filterPrice" type="range" name="price" id="filterPrice" value="100" min="20" max="100" step="10">
+                <output for="filterPrice">$100</output>
+              </section>
+              </fieldset>
+            </form>
         </div>
-    </footer>
-
-    <script src="js/script.js"></script>
-
+        <h2 class="subheading">Results</h2>
+        <section class="results">
+        </section>
+    
+        <footer>
+          <nav class="footer">
+            <p>Copyright (c) 1970</p>
+            <a href="#">Terms</a>|<a href="#" >Privacy</a>
+          </nav>
+          <div class="logo">
+            <div class="footer-right">  
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://twitter.com/"><i class="fab fa-twitter-square" ></i></a>
+                <a href="http://instagram.com/"><i class="fab fa-instagram-square" ></i></a>         
+              </div>
+            </div>
+        </footer>
+        <script src="js/script.js"></script>
+    </div>
+    </main>
   </body>
 </html>
