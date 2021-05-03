@@ -43,7 +43,7 @@ table, th, td {
     text-transform:capitalize;
     padding: 1em;
     width: 100%;
-  }
+}
 
 th{
     background-color: var(--color-white);
@@ -54,23 +54,24 @@ tr:nth-child(odd) {
     background-color: #eee;
 }
 
-
-
 h2{
     font-family: 'Fira Sans', sans-serif;
     text-transform: uppercase;
     margin-top: 1em;
     /* margin-bottom: 1em; */
 }
+
 h3 {
     font-family: 'Fira Sans', sans-serif;
     text-transform: capitalize;
 }
+
 nav{
     display: flow-root;
     background-color: var(--color-grey);
     padding:0em 1em;
 }
+
 main {
     display:flow-root;
     background-color: var(--color-white);
@@ -137,22 +138,15 @@ footer{
     font-size: 0.75em;
 }
 
-
-
-
-
 .filter-options {
     display: none;
 }
-
 
 .product-header{
     background: url('../img/coffee-banner.jpg');
     background-color: #fff;
     background-size: cover;
 }
-
-
 
 .header-list {
     background-color: var(--color-yellow);
@@ -262,13 +256,13 @@ color: var(--color-white);
     border: black solid 1px;
     background: white;
     cursor: pointer;
-  }
+}
   
-  .xIcon {
+.xIcon {
     display: none;
-  }
-  
-  .ham-menu {
+}
+
+.ham-menu {
     position: fixed;
     top: 0;
     left: 0;
@@ -282,28 +276,26 @@ color: var(--color-white);
     transition: transform 0.2s;
     list-style: none;
     padding-top: 4rem;
-  }
-  
-  .showMenu {
+}
+
+.showMenu {
     transform: translateY(0);
-  }
-  
-  li {
+}
+
+li {
     padding: 1rem 0;
-  }
-  
-  .menu-list {
+}
+
+.menu-list {
     display: inline;
-    font-size: 2rem;
+    font-size: 2em;
     color: white;
     text-decoration: none;
-  }
-  
-  .menu-list:hover {
+}
+
+.menu-list:hover {
     text-decoration: underline;
-  }
-
-
+}
 
 .logo{
     display: flex;
@@ -328,6 +320,7 @@ footer nav ul{
 .footer>p{
     margin:1.2em 0 .5em 0;
 }
+
 .footer>ul{
     margin: .5em 0 1em 0;
 }
@@ -336,7 +329,6 @@ footer nav ul{
     display: inline-block;
     text-align: center;
     align-items: center;
-
 }
 
 .roast-img, .size-label, .sizes {
@@ -344,20 +336,19 @@ footer nav ul{
 }
 
 
-
 @media only screen and (min-width: 50em) {
     body{
-        font-size:1em;
+        font-size: 1em;
     }
     
     main{
-        margin-top:-3em;
+        margin-top: -3em;
     }
 
     main, .product-content{
-        padding:0;
-        width:60em;
-        margin:0em auto;
+        padding: 0;
+        width: 60em;
+        margin: 0em auto;
     }
 
     dd {
@@ -365,11 +356,11 @@ footer nav ul{
     }
     .product-content p{
         line-height: 1em;
-        font-size:1.2em;
+        font-size: 1.2em;
     }
     
     .container{
-        grid-template-columns:1fr 2fr;
+        grid-template-columns: 1fr 2fr;
         grid-template-areas:
         "sidebar result"
         "sidebar ."
@@ -382,7 +373,7 @@ footer nav ul{
 
         
     .menu > li {
-        padding:  0.7em 0;
+        padding: 0.7em 0;
         /* padding-top: 0.125em; */
 
     }
