@@ -138,19 +138,8 @@ footer{
 }
 
 
-.menu > li {
-    padding:  0.7em 0;
-    /* padding-top: 0.125em; */
 
-}
 
-.menu > li > .submenu {
-    display: none;
-}
-
-.menu > li > .submenu:hover {
-    display: block;
-}
 
 .filter-options {
     display: none;
@@ -259,6 +248,63 @@ color: var(--color-white);
 	background-color: var(--color-yellow);
 }
 
+.menu{
+    display: none;
+}
+
+.ham {
+    position: fixed;
+    z-index: 1;
+    top: 1em;
+    right: 2em;
+    width: 2em;
+    height: 2em;
+    border: black solid 1px;
+    background: white;
+    cursor: pointer;
+  }
+  
+  .xIcon {
+    display: none;
+  }
+  
+  .ham-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    background: black;
+    color: white;
+    transform: translateY(-100%);
+    transition: transform 0.2s;
+    list-style: none;
+    padding-top: 4rem;
+  }
+  
+  .showMenu {
+    transform: translateY(0);
+  }
+  
+  li {
+    padding: 1rem 0;
+  }
+  
+  .menu-list {
+    display: inline;
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .menu-list:hover {
+    text-decoration: underline;
+  }
+
+
+
 .logo{
     display: flex;
     align-items: center;
@@ -332,6 +378,25 @@ footer nav ul{
         "sidebar ."
         "sidebar ."
         "sidebar .";
+    }
+
+        
+    .menu > li {
+        padding:  0.7em 0;
+        /* padding-top: 0.125em; */
+
+    }
+
+    .menu > li > .submenu {
+        display: none;
+    }
+
+    .menu > li > .submenu:hover {
+        display: block;
+    }
+
+    .ham, .ham-menu, .menu-list, .submenu-list, .submenu-item{
+        display: none;
     }
 
     .sidebar{
