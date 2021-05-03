@@ -279,4 +279,31 @@ filterSort.addEventListener(`click`, function(event) {
 
 setProductToTable(productsAr);
 
+// Toggle menu
 
+var menu = document.querySelector(".ham-menu")
+var ham = document.querySelector(".ham")
+var hamIcon = document.querySelector(".xIcon")
+var menuIcon = document.querySelector(".menuIcon")
+
+ham.addEventListener("click", toggleMenu)
+
+function toggleMenu() {
+  if (menu.classList.contains("showMenu")) {
+    menu.classList.remove("showMenu");
+    hamIcon.style.display = "none";
+    menuIcon.style.display = "block";
+  } else {
+    menu.classList.add("showMenu");
+    hamIcon.style.display = "block";
+    menuIcon.style.display = "none";
+  }
+}
+
+var menuLinks = document.querySelectorAll(".menu-list")
+
+menuLinks.forEach(
+  function (menuLink) {
+    menu-list.addEventListener("click", toggleMenu)
+  }
+)
