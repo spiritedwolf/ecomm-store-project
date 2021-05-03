@@ -1,0 +1,29 @@
+.filters {
+    display: none;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 40em;
+    margin: 0 auto;
+    grid-gap: 1em;
+}
+
+.bigimg {
+grid-column: span 3;
+width: 20em;
+}
+
+@media only screen and (min-width: 50em) {
+    .filters {
+        display: contents;
+    }
+
+    .thumb {
+        width: 10em; 
+    }
+
+    .filter-list size 
+}
+

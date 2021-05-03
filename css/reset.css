@@ -28,7 +28,8 @@ ul, ol, dl {
 img {
 	max-width: 100%;
 	height: auto;
-
+    display: block;
+    margin: 0 auto;
 }
 
 input, button {
@@ -38,7 +39,7 @@ input, button {
 
 h3 {
 	text-transform: capitalize;
-	font-size: 2rem;
+	font-size: 2em;
 }
 
 
@@ -69,8 +70,8 @@ input, button {
 	display: flex;
 	margin: 0;
 	padding: 0;
-	border: none; */
-}
+	border: none;
+} */
 /* 
 legend {
 	padding: 0;
