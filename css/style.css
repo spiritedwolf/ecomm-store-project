@@ -330,8 +330,10 @@ footer nav ul{
 .add-to-cart:hover {
     box-shadow: 0 0 40px 40px var(--color-yellow) inset;
 }
-      
 
+.product {
+    padding-bottom: 1em;
+}
 
 @media only screen and (min-width: 50em) {
     body{
