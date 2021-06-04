@@ -112,7 +112,8 @@ const productsAr = [
 ];
 
 const searchFilter = {
-  price: 0
+  price: 0,
+  rating: 0
 }
 
 // select the section with the class name results
@@ -163,10 +164,10 @@ const setProductToTable = function(array) {
           <header>
             <a href="product.html" class="product-link">
               <h3 class="product-title">${item.name}</h3>
-            </a>
+            
             <div class="image_container">
               <img src="img/${item.image}" alt="Product Image" class="center-img">
-            </div>
+            </div></a>
             <div class="product-price">
             <data value="${item.salePrice}"><del>$${item.orignalPrice}</del> <ins>$${item.salePrice}</ins></data>
             </div>
@@ -219,13 +220,11 @@ const filterAndSort = function(...args) {
   let filterProduct = productsAr.filter(function(item) {
       return (item.salePrice <= filtterPriceRange);
   });
-
-
+  
   // console.log(filterProduct)
   setProductToTable(filterProduct);
-
-
 }
+
 
 filterPrice.addEventListener(`input`, function(event) {
   // The range slider
@@ -233,6 +232,7 @@ filterPrice.addEventListener(`input`, function(event) {
   // The <output> for the range (so we can see what's happening)
   const theOutput = document.querySelector(`output[for="filterPrice"]`);
   // put the range "value" in the output
+  // Example $50
   theOutput.textContent = ` $ ${priceRange.value}`;  
   // Put the value into the filter object
   searchFilter.price = Number(priceRange.value);
@@ -281,24 +281,24 @@ setProductToTable(productsAr);
 
 // Toggle menu
 
-var menu = document.querySelector(".ham-menu")
-var ham = document.querySelector(".ham")
-var hamIcon = document.querySelector(".xIcon")
-var menuIcon = document.querySelector(".menuIcon")
+// var menu = document.querySelector(".ham-menu");
+// var ham = document.querySelector(".ham");
+// var hamIcon = document.querySelector(".xIcon");
+// var menuIcon = document.querySelector(".menuIcon");
 
-ham.addEventListener("click", toggleMenu)
+// ham.addEventListener("click", toggleMenu)
 
-function toggleMenu() {
-  if (menu.classList.contains("showMenu")) {
-    menu.classList.remove("showMenu");
-    hamIcon.style.display = "none";
-    menuIcon.style.display = "block";
-  } else {
-    menu.classList.add("showMenu");
-    hamIcon.style.display = "block";
-    menuIcon.style.display = "none";
-  }
-}
+// function toggleMenu() {
+//   if (menu.classList.contains("showMenu")) {
+//     menu.classList.remove("showMenu");
+//     hamIcon.style.display = "none";
+//     menuIcon.style.display = "block";
+//   } else {
+//     menu.classList.add("showMenu");
+//     hamIcon.style.display = "block";
+//     menuIcon.style.display = "none";
+//   }
+// }
 
 var menuLinks = document.querySelectorAll(".menu-list")
 

@@ -9,6 +9,7 @@
     --color-black: #000;
     --color-white: #fff;
     --color-yellow: #FDBB48;
+    --color-red: #e74c3c;
 }
 
 html{
@@ -115,7 +116,7 @@ footer{
     display: inline-block;
         /* width: 12em; */
         /* text-align: center; */
-        align-items: center;
+    align-items: center;
 }
 
 .rating > fieldset > dl > dd {
@@ -295,6 +296,41 @@ footer nav ul{
     display: inline-block;
 }
 
+.product-footer-btn {
+    display: inline-block;
+}
+
+.add-to-cart {
+    box-sizing: border-box;
+    appearance: none;
+    background-color: transparent;
+    border: 0.11em solid var(--color-yellow);
+    border-radius: 0.6em;
+    color: var(--color-yellow);
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    
+}
+.add-to-cart:hover, .add-to-cart:focus {
+          color: var(--color-yello);
+};
+        
+.add-to-cart {
+    transition: box-shadow 100ms ease-in-out, color 100ms ease-in-out;
+}
+.add-to-cart:hover {
+    box-shadow: 0 0 40px 40px var(--color-yellow) inset;
+}
+      
 
 
 @media only screen and (min-width: 50em) {
@@ -360,21 +396,21 @@ footer nav ul{
         display: inline-block;
     }
 
-    .navigation{
+    .navigation {
         font-size:.5em;
         margin:0 0 0 -2em ;
         position: relative;
 	    margin-top: -4em;
     }
 
-    .navigation ul{
+    .navigation ul {
         display: flex;
         justify-content: space-evenly;
         padding: 1em 2em;
         
     }
 
-    .navigation>ul>li{
+    .navigation>ul>li {
         text-align: center;
         margin:0 0.8em;
     }
