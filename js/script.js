@@ -112,6 +112,7 @@ const productsAr = [
 ];
 
 const searchFilter = {
+  query: '',
   price: 0,
   rating: 0
 }
@@ -128,7 +129,8 @@ const filterMediumSize = document.querySelector(`#md`);
 const filterLargeSize = document.querySelector(`#lg`);
 // select the element with the id "sort"
 const filterSort = document.querySelector(`#sort`);
-
+// select the element with the id "find"
+const filterName = document.querySelector(`#find`);
 
 
 const setProductToTable = function(array) {
@@ -324,6 +326,19 @@ filterSort.addEventListener(`click`, function(event) {
   }
 
 });
+
+// Filter by searching name 
+
+const filterByName = function() {
+  const filteredArray = productsAr.filter((item) => item.name.toUpperCase().includes(searchFilter.query));
+  setProductToTable(filteredArray)
+
+}
+
+filterName.addEventListener(`input`, function(event) {
+  searchFilter.query = event.target.value.toUpperCase()
+  filterByName()
+})
 
 
 setProductToTable(productsAr);

@@ -11,23 +11,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/brands.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     <header class="product-header">
       <div class="product-content">
         <div class="logo">
-          <h1>NerdyNina Coffee</h1>
+          <a href="index.html"><h1>NerdyNina Coffee</h1></a>
         </div>
-
-        <div class="search-nav">
-          <form class="search">
-            <label>Search
-              <input type="search" name="find" id="find">
-            </label>
-            <button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
-          </form>
-        </div>
-        
+      </div>
     </header>
 
     <main>
@@ -47,9 +39,25 @@
         </nav>
     
         <div class="sidebar">
+          
           <section id="ingredients">
+
+            
+
             <form class="filters">
               <h2>Filters</h2>
+
+              <div class="search-nav">
+                <fieldset>
+                  <legend>Search</legend>
+                  <ul class="filter-list">
+                    <label>
+                      <input type="search" name="find" id="find">
+                    </label>
+                    <button type="button"><i class="fa fa-search"></i></button> 
+                  </ul>
+                </fieldset>
+              </div>
     
               <div class="filter-options">
                 <fieldset>
@@ -88,6 +96,8 @@
               </section>
               </fieldset>
             </form>
+
+            
         </div>
         <h2 class="subheading">Results</h2>
         <section class="results">
