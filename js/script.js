@@ -120,6 +120,12 @@ const searchFilter = {
 const productTable = document.querySelector(`.results`);
 // select the input field with the id "filterPrice"
 const filterPrice = document.querySelector(`#filterPrice`);
+// select the input field with  the id "sm"
+const filterSmallSize = document.querySelector(`#sm`);
+// select the input field with  the id "md"
+const filterMediumSize = document.querySelector(`#md`);
+// select the input field with  the id "lg"
+const filterLargeSize = document.querySelector(`#lg`);
 // select the element with the id "sort"
 const filterSort = document.querySelector(`#sort`);
 
@@ -242,7 +248,50 @@ filterPrice.addEventListener(`input`, function(event) {
 
 })
 
+// Small Size filter
+filterSmallSize.addEventListener(`click`, function(event) {
+  const smallSizeInput = event.target;
+ 
+  if (smallSizeInput.checked == true) {
+    let smallSizeFilter = productsAr.filter((item) => {
+      return item.size.includes("Small");
+      });
+    setProductToTable(smallSizeFilter);
+  }
+  else {
+    setProductToTable(productsAr);
+  }
+});
 
+// Medium Size filter
+filterMediumSize.addEventListener(`click`, function(event) {
+  const mediumSizeInput = event.target;
+ 
+  if (mediumSizeInput.checked == true) {
+    let mediumSizeFilter = productsAr.filter((item) => {
+      return item.size.includes("Medium");
+      });
+    setProductToTable(mediumSizeFilter);
+  }
+  else {
+    setProductToTable(productsAr);
+  }
+});
+
+// Large Size filter
+filterLargeSize.addEventListener(`click`, function(event) {
+  const LargeSizeInput = event.target;
+ 
+  if (LargeSizeInput.checked == true) {
+    let largeSizeFilter = productsAr.filter((item) => {
+      return item.size.includes("Large");
+      });
+    setProductToTable(largeSizeFilter);
+  }
+  else {
+    setProductToTable(productsAr);
+  }
+});
 
 filterSort.addEventListener(`click`, function(event) {
   // Function to sort the productAr array elements by it's sale price from low to high 
@@ -278,32 +327,3 @@ filterSort.addEventListener(`click`, function(event) {
 
 
 setProductToTable(productsAr);
-
-// Toggle menu
-
-// var menu = document.querySelector(".ham-menu");
-// var ham = document.querySelector(".ham");
-// var hamIcon = document.querySelector(".xIcon");
-// var menuIcon = document.querySelector(".menuIcon");
-
-// ham.addEventListener("click", toggleMenu)
-
-// function toggleMenu() {
-//   if (menu.classList.contains("showMenu")) {
-//     menu.classList.remove("showMenu");
-//     hamIcon.style.display = "none";
-//     menuIcon.style.display = "block";
-//   } else {
-//     menu.classList.add("showMenu");
-//     hamIcon.style.display = "block";
-//     menuIcon.style.display = "none";
-//   }
-// }
-
-var menuLinks = document.querySelectorAll(".menu-list")
-
-menuLinks.forEach(
-  function (menuLink) {
-    menu-list.addEventListener("click", toggleMenu)
-  }
-)
