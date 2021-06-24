@@ -24,6 +24,10 @@ width: 20em;
         width: 10em; 
     }
 
-    .filter-list size 
+    .ingredients {
+        padding: 1em;
+    }
+
+    /* .filter-list size  */
 }
 

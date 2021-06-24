@@ -208,9 +208,7 @@ const setProductToTable = function(array) {
                 </fieldset>
               </div>
             </form>
-            <div class="product-description">
-            <p>${item.description}<a href="#">see more</a></p>
-            </div>
+           
             <div class="product-footer-btn">
               <button type="button" class="add-to-cart"><i class="fa fa-shopping-cart fa-lg"></i> Add to Cart</button>
             </div>            

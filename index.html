@@ -40,7 +40,7 @@
     
         <div class="sidebar">
           
-          <section id="ingredients">
+          <section id="ingredients" class="ingredients">
 
             
 
@@ -52,9 +52,9 @@
                   <legend>Search</legend>
                   <ul class="filter-list">
                     <label>
-                      <input type="search" name="find" id="find">
+                      <input type="search" name="find" id="find" class="find">
                     </label>
-                    <button type="button"><i class="fa fa-search"></i></button> 
+                    <button type="button" class="find-btn"><i class="fa fa-search "></i></button> 
                   </ul>
                 </fieldset>
               </div>
@@ -63,7 +63,7 @@
                 <fieldset>
                   <legend>Categories</legend>
                   <ul class="filter-list">
-                    <li><input type="checkbox" name="categorie" value="Coffee" id="coffee"> <label for="coffee">Coffee</label></li>
+                    <li><input type="checkbox" name="categorie" class="form-check-input" value="Coffee" id="coffee"> <label for="coffee">Coffee</label></li>
                     <li><input type="checkbox" name="categorie" value="Blended Coffee" id="blended-coffee"> <label for="blended-coffee">Blended Coffee</label></li>
                     <li><input type="checkbox" name="categorie" value="Decaf Coffee" id="decaf-coffee"> <label for="decaf-coffee">Decaf Coffee</label></li>
                     <li><input type="checkbox" name="categorie" value="Espresso" id="espresso"> <label for="espresso">Espresso</label></li>
@@ -83,8 +83,9 @@
                 </fieldset>
               </div>
               <fieldset>
-                <label for="sort">Filter By</label>
-                <select name="sort" id="sort">
+                <div class="sort-form-container">
+                <label for="sort" class="sort-label">Filter By</label>
+                <select name="sort" id="sort" class="sort-form">
                   <option value="price-low">Price - lowest to highest</option>
                   <option value="price-high">Price - highest to lowest</option>
                   <option value="newest">Newest releases</option>
@@ -94,6 +95,7 @@
                 <input class="filterPrice" type="range" name="price" id="filterPrice" value="100" min="20" max="100" step="10">
                 <output for="filterPrice">$100</output>
               </section>
+            </div>
               </fieldset>
             </form>
 
